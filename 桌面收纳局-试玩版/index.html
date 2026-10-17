@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="theme-color" content="#f7ead2" />
+  <title>桌面收纳局</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">TODAY'S TIDY</p>
+        <h1>桌面收纳局</h1>
+      </div>
+      <button id="soundBtn" class="icon-btn" aria-label="切换音效">♪</button>
+    </header>
+
+    <section class="status-card" aria-label="游戏状态">
+      <div class="stat"><span>剩余</span><strong id="remaining">48</strong></div>
+      <div class="progress-wrap"><div id="progress" class="progress"></div></div>
+      <div class="stat right"><span>时间</span><strong id="timer">02:30</strong></div>
+    </section>
+
+    <section id="desk" class="desk" aria-label="凌乱的桌面">
+      <div class="desk-note">摸鱼结束前，收拾干净吧！</div>
+      <div class="lamp"><i></i></div>
+      <div class="keyboard">⌨</div>
+      <div id="pile" class="pile"></div>
+      <div id="combo" class="combo" aria-live="polite"></div>
+    </section>
+
+    <section class="tray-area">
+      <div class="tray-title"><span>临时收纳格</span><small>凑齐 3 个自动归位</small></div>
+      <div id="tray" class="tray" aria-label="收纳槽"></div>
+    </section>
+
+    <nav class="tools" aria-label="收纳工具">
+      <button data-tool="undo"><span>↶</span><b>撤回</b><em id="undoCount">2</em></button>
+      <button data-tool="shuffle"><span>⤨</span><b>打乱</b><em id="shuffleCount">2</em></button>
+      <button data-tool="vacuum"><span>♨</span><b>吸尘</b><em id="vacuumCount">1</em></button>
+    </nav>
+  </main>
+
+  <div id="overlay" class="overlay show">
+    <div class="modal">
+      <div id="modalSticker" class="modal-sticker">🧹</div>
+      <p id="modalEyebrow" class="eyebrow">DESK RESCUE</p>
+      <h2 id="modalTitle">桌面乱成一团啦！</h2>
+      <p id="modalText">连续点选三个相同物品，把它们送回原位。注意：收纳格只有 7 个位置。</p>
+      <div class="tip-row"><span>👆 点击物品</span><span>✦ 三个消除</span><span>▦ 别塞满</span></div>
+      <button id="startBtn" class="primary">开始收拾</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
